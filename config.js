@@ -5,16 +5,16 @@
 const SITE = {
 
   /* ---------- Brand ---------- */
-  studioName: "Smartiz",
+  studioName: "Faeze Erfani",
   tagline: "Creative Design Studio",
   logo: "logo.png",
 
   /* ---------- Hero / Home ---------- Every project*/
   hero: {
     kicker: "Design · Motion · Print",
-    title: "We craft visual stories that move people.",
+    title: "Graphic designer specialized in editorial layout, book design, and dynamic visuals.",
     subtitle:
-      "studio_hamejoore is a creative studio focused on book covers, editorial layouts, motion design and posters — blending bold ideas with refined execution.",
+      "my services include book layout, cover design, posters, motion graphic, banners and visual identity design.",
     ctaText: "See Our Work",
     ctaLink: "#work",
     secondaryCtaText: "Get in Touch",
@@ -23,9 +23,9 @@ const SITE = {
 
   /* ---------- About / Intro section ---------- */
   about: {
-    heading: "A studio built on craft",
+    heading: "Work Experience",
     text:
-      "Every project begins with a story. We translate ideas into striking visuals — from the quiet elegance of a book cover to the energy of motion graphics. Minimal where it matters, bold where it counts.",
+      "My work experience was two years in  Gerad publishing as a graphic and layout designer. I did layout design for Khate Sefid and Baharnaz publications as a project. As a freelancer, I design book cover , poster and banner design, and layout design for publications..",
   },
 
   /* ---------- What we do ---------- */
@@ -33,15 +33,15 @@ const SITE = {
     { icon: "book",   title: "Cover Design",     text: "Book covers that capture the soul of the story within." },
     { icon: "layout", title: "Editorial Layout", text: "Clean, readable, beautifully structured page design." },
     { icon: "play",   title: "Motion Design",    text: "Animated visuals that bring brands and ideas to life." },
-    { icon: "poster", title: "Poster Art",       text: "Bold poster design made to stop people in their tracks." },
+    { icon: "poster", title: "Poster Art",       text: "To showcase your business artistically." },
   ],
 
   /* ---------- Stats strip (optional flair) ---------- */
   stats: [
     { value: "20+", label: "Projects Delivered" },
-    { value: "4+",    label: "Years of Craft" },
-    { value: "40+",  label: "Happy Clients" },
-    { value: "7+",    label: "Design Disciplines" },
+    { value: "3+",    label: "Years of Craft" },
+    { value: "18+",  label: "Happy Clients" },
+    { value: "4+",    label: "Design Disciplines" },
   ],
 
   /* ---------- Portfolio pages (folder-driven galleries) ---------- */
@@ -79,14 +79,14 @@ const SITE = {
     items: [
       { icon: "telegram",  label: "Telegram",  value: "faezeerf",          href: "https://t.me/faezeerf" },
       { icon: "instagram", label: "Instagram", value: "Faeze_erfaninia",        href: "https://instagram.com/Faeze_erfaninia" },
-      { icon: "phone",     label: "Phone",     value: "0901 034 8017",          href: "tel:+989010348017" },
-      { icon: "mail",      label: "Email",     value: "Faeze.royal",  href: "mailto:Faeze.royal@gmail.com" },
+      { icon: "phone",     label: "Phone",     value: "0939 042 6909",          href: "tel:+989390426909" },
+      { icon: "mail",      label: "Email",     value: "Faeze.Erfani",  href: "mailto:Faezeerf15@gmail.com" },
     ],
   },
 
   /* ---------- Footer ---------- */
   footer: {
     text: "Creative design studio — covers, layouts, motion & posters.",
-    copyright: "© " + new Date().getFullYear() + " Smartiz. All rights reserved.",
+    copyright: "© " + new Date().getFullYear() + " FaezeErfani. All rights reserved.",
   },
 };
