@@ -48,28 +48,51 @@ async function getMedia(folder) {
 }
 
 /* ---------- lightbox ---------- */
-let lbItems = [], lbIndex = 0, lbType = "image";
+let lbItems = [], lbIndex = 0, lbType = "image", lbPageId = "";
 const lightbox = document.getElementById("lightbox");
+
+/* Look up the identity card for one gallery item, falling back to
+   SITE.identityFallback when the pageId/position has no entry yet.
+   Keep everything editable from config.js only. */
+function getIdentity(pageId, index) {
+  const fallback = SITE.identityFallback || {};
+  const entry = SITE.identities?.[`${pageId}-${index + 1}`] || {};
+  return {
+    title: entry.title || fallback.title || "Untitled Work",
+    tag: entry.tag || fallback.tag || "",
+    description: entry.description || fallback.description || "",
+  };
+}
 
 function renderLightbox() {
   const src = lbItems[lbIndex];
   const media = lbType === "video"
     ? `<video src="${src}" autoplay muted loop playsinline controls></video>`
     : `<img src="${src}" alt="Preview" />`;
+  const identity = getIdentity(lbPageId, lbIndex);
   lightbox.innerHTML = `
     <button class="lightbox-close" aria-label="Close">${icon("close")}</button>
     ${lbItems.length > 1 ? `
       <button class="lightbox-nav prev" aria-label="Previous">${icon("left")}</button>
       <button class="lightbox-nav next" aria-label="Next">${icon("right")}</button>` : ""}
-    <div class="lightbox-content">${media}</div>`;
+    <div class="lightbox-content">
+      <div class="identity-card">
+        <div class="identity-media">
+          ${media}
+          <h3 class="identity-title">${identity.title}</h3>
+        </div>
+        <span class="identity-tag">${identity.tag}</span>
+        <p class="identity-desc">${identity.description}</p>
+      </div>
+    </div>`;
   lightbox.querySelector(".lightbox-close").onclick = closeLightbox;
   const prev = lightbox.querySelector(".prev");
   const next = lightbox.querySelector(".next");
   if (prev) prev.onclick = e => { e.stopPropagation(); lbIndex = (lbIndex - 1 + lbItems.length) % lbItems.length; renderLightbox(); };
   if (next) next.onclick = e => { e.stopPropagation(); lbIndex = (lbIndex + 1) % lbItems.length; renderLightbox(); };
 }
-function openLightbox(items, index, type) {
-  lbItems = items; lbIndex = index; lbType = type;
+function openLightbox(items, index, type, pageId) {
+  lbItems = items; lbIndex = index; lbType = type; lbPageId = pageId;
   renderLightbox();
   lightbox.classList.add("show");
   lightbox.setAttribute("aria-hidden", "false");
@@ -241,7 +264,7 @@ async function renderGallery(app, page) {
     </div>`).join("");
 
   gallery.querySelectorAll(".g-item").forEach(el => {
-    const open = () => openLightbox(files, +el.dataset.index, page.type);
+    const open = () => openLightbox(files, +el.dataset.index, page.type, page.id);
     el.addEventListener("click", open);
     el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
   });
