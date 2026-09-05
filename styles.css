@@ -21,6 +21,11 @@
   --accent-2:     #22d3ee;
   --accent-3:     #818cf8;
 
+  /* Work identity card (lightbox) accent colors — edit freely */
+  --identity-sky:  #38bdf8;
+  --identity-glow: #22d3ee;
+  --identity-gray: #9aa3b2;
+
   --grad-main:    linear-gradient(135deg, #3b82f6 0%, #818cf8 100%);
   --grad-text:    linear-gradient(125deg, #60a5fa 0%, #a5b4fc 45%, #22d3ee 100%);
 
@@ -798,8 +803,8 @@ footer {
 }
 .lightbox.show { opacity: 1; visibility: visible; }
 .lightbox-content {
-  max-width: min(900px, 92vw);
-  max-height: 86vh;
+  max-width: min(1080px, 94vw);
+  max-height: 88vh;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(99, 162, 255, .2);
@@ -808,12 +813,69 @@ footer {
   transition: transform .4s var(--spring);
 }
 .lightbox.show .lightbox-content { transform: scale(1); }
-.lightbox-content img,
-.lightbox-content video {
+.identity-media img,
+.identity-media video {
   max-width: 100%;
-  max-height: 86vh;
+  max-height: 52vh;
   object-fit: contain;
   display: block;
+  border-radius: 10px;
+  background: #000;
+}
+
+/* ── Work identity card (inside the lightbox) ─────────────────── */
+.identity-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 38%) 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "media tag"
+    "media desc";
+  gap: 6px 28px;
+  padding: 28px;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--surface);
+}
+.identity-media {
+  grid-area: media;
+  display: flex;
+  flex-direction: column;
+}
+.identity-title {
+  margin-top: 14px;
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--identity-sky);
+}
+.identity-tag {
+  grid-area: tag;
+  justify-self: end;
+  align-self: start;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--identity-glow);
+  text-shadow: 0 0 14px rgba(34, 211, 238, .65);
+  white-space: nowrap;
+}
+.identity-desc {
+  grid-area: desc;
+  margin-top: 6px;
+  color: var(--identity-gray);
+  font-size: .95rem;
+  line-height: 1.75;
+}
+@media (max-width: 760px) {
+  .identity-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "media" "tag" "desc";
+    gap: 10px;
+    padding: 20px;
+  }
+  .identity-tag { justify-self: start; }
 }
 .lightbox-close,
 .lightbox-nav {
