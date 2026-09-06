@@ -5,50 +5,50 @@
 const SITE = {
 
   /* ---------- Brand ---------- */
-  studioName: "فائزه عرفانی",
-  tagline: "طراح گرافیک",
+  studioName: "Faeze Erfani",
+  tagline: "Creative Design Studio",
   logo: "logo.png",
 
   /* ---------- Hero / Home ---------- Every project*/
   hero: {
-    kicker: "گرافیک دیزاین",
-    title: " طراحی صفحه آرایی، جلد کتاب،  پوستر و بنر ، موشن گرافیک ، هویت بصری	",
+    kicker: "Design · Motion · Print",
+    title: "Graphic designer specialized in editorial layout, book design, and dynamic visuals.",
     subtitle:
-      "برای مشاهده نمونه کارها دکمه زیر را کلیک کنید.",
-    ctaText: "نمونه کار",
+      "my services include book layout, cover design, posters, motion graphic, banners and visual identity design.",
+    ctaText: "See Our Work",
     ctaLink: "#work",
-    secondaryCtaText: "درخواست همکاری",
+    secondaryCtaText: "Get in Touch",
     secondaryCtaLink: "#/contact",
   },
 
   /* ---------- About / Intro section ---------- */
   about: {
-    heading: "تجارب کاری",
+    heading: "Work Experience",
     text:
-      "طراح گرافیک و صفحه‌آرا در انتشارات گراد به مدت سه سال، صفحه آرا به صورت پروژه‌ای در انتشارات بهارناز و خط سفید، طراحی پوستر ، بنر و هویت بصری به صورت فریلنسر.",
+      "My work experience was two years in  Gerad publishing as a graphic and layout designer. I did layout design for Khate Sefid and Baharnaz publications as a project. As a freelancer, I design book cover , poster and banner design, and layout design for publications..",
   },
 
   /* ---------- What we do ---------- */
   services: [
-    { icon: "book",   title: "طراحی جلد",     text: "طراحی جلد کودک و بزرگسال برای انتشارات‌ها یا کتاب و مجله‌ی شخصی شما" },
-    { icon: "layout", title: "صفحه آرایی", text: "صفحه آرایی کتاب کودک، بزرگسال، نشریه، مجله" },
-    { icon: "play",   title: "موشن گرافیک",    text: "طراحی موشن گرافیک برای کسب و کار ، و پیج شما و لوگوموشن " },
-    { icon: "poster", title: "طراحی پوستر",       text: "طراحی پوستر و بنر برای برند، پیج و سایت شما " },
+    { icon: "book",   title: "Cover Design",     text: "Book covers that capture the soul of the story within." },
+    { icon: "layout", title: "Editorial Layout", text: "Clean, readable, beautifully structured page design." },
+    { icon: "play",   title: "Motion Design",    text: "Animated visuals that bring brands and ideas to life." },
+    { icon: "poster", title: "Poster Art",       text: "To showcase your business artistically." },
   ],
 
   /* ---------- Stats strip (optional flair) ---------- */
   stats: [
-    { value: "20+", label: "پروژه‌های تحویل داده شده" },
-    { value: "3+",    label: "سال تجربه" },
-    { value: "18+",  label: "رضایت مشتریان" },
-    { value: "4+",    label: "حوزه‌های طراحی" },
+    { value: "20+", label: "Projects Delivered" },
+    { value: "3+",    label: "Years of Craft" },
+    { value: "18+",  label: "Happy Clients" },
+    { value: "4+",    label: "Design Disciplines" },
   ],
 
   /* ---------- Portfolio pages (folder-driven galleries) ---------- */
   pages: [
     {
       id: "cover", nav: "Cover", icon: "book",
-      title: "طراحی جلد",
+      title: "Cover Design",
       description: "A curated collection of book cover designs — each one a doorway into a story.",
       folder: "cover", type: "image",
     },
